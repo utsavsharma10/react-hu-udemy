@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "author": "Joseph marie",
+      "price": 563,
+      "discount": 5,
+      "tag1": "React",
+      "tag2": "React"
+    },
+    {
+      "id": 2,
+      "title": "Learn Ionic React By Building Whatsaoo Clone",
+      "author": "Fiakyo Adpejeu",
+      "price": 456,
+      "discount": 10,
+      "tag1": "React",
+      "tag2": "ReactJS"
+    },
+    {
+      "id": 3,
+      "title": "Building an Amazon clone: Nodejs + MongoDB",
+      "author": "Arash Yahya",
+      "price": 599,
+      "discount": 15,
+      "tag1": "React",
+      "tag2": "React"
+    },
+    {
+      "id": 4,
+      "title": "100 Days of Code: The Complete Python Pro Bootcamp",
+      "author": "Dr. Angela Yu",
+      "price": 699,
+      "discount": 10,
+      "tag1": "React",
+      "tag2": "React"
+    },
+    {
+      "id": 5,
+      "title": "Complete JS course: Zero to Hero 2022",
+      "author": "Jonas Schmedtmann",
+      "price": 799,
+      "discount": 20,
+      "tag1": "React",
+      "tag2": "React"
+    }
+  ]
