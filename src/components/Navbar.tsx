@@ -23,12 +23,13 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             HashedIn
           </Typography>
-          <Button color="inherit">Courses</Button>
-          <Button color="inherit">My WishList</Button>
+          <Button color="inherit" href="/courses">Courses</Button>
+          <Button color="inherit" href="/wishlist">My WishList</Button>
           <IconButton
             size="large"
             aria-label="profile of current user"
             color="inherit"
+            href="profile"
           >
             <AccountCircle />
           </IconButton>
@@ -36,6 +37,7 @@ const Navbar = () => {
             size="large"
             aria-label="cart of current user"
             color="inherit"
+            href="/cart"
           >
             <ShoppingCartIcon /> 
           </IconButton>
