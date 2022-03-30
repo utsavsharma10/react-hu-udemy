@@ -10,8 +10,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1}}>
+      <AppBar position="sticky" style={{background: '#00000029', color: "black"}} >
         <Toolbar>
           <IconButton
             size="large"
