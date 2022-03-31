@@ -33,7 +33,7 @@ const CourseCard = ({ item, handleClick }: any) => {
           sx = {{width: "100px", border: "1px solid black"}}
           alt="course_img"
       />
-      <CardContent sx={{flexBasis: "100%", display: "flex", alignItems: "center"}}>
+      <CardContent sx={{flexBasis: "100%", display: "flex", alignItems: "center", padding: 0, paddingLeft:"0.5rem"}}>
         <Typography display="inline" sx={{ fontSize: 14, fontWeight: "bold", width: "40%" }}>{title}
           <p>
           <Button size="small" href="#" style={buttonStyle} sx={{mr: "0.5rem"}}>{tag1}</Button>

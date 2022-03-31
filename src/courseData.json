@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "title": "Learn Ionic React By Building Whatsaoo Clone",
+      "title": "Learn React By Building Whatsapp Clone",
       "author": "Fiakyo Adpejeu",
       "price": 456,
       "discount": 10,
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "title": "Building an Amazon clone: Nodejs + MongoDB",
+      "title": "Building an Amazon clone: Reactjs + MongoDB",
       "author": "Arash Yahya",
       "price": 599,
       "discount": 15,
@@ -28,7 +28,7 @@
     },
     {
       "id": 4,
-      "title": "100 Days of Code: The Complete Python Pro Bootcamp",
+      "title": "100 Days of Code: The Complete ReactJS Pro Bootcamp",
       "author": "Dr. Angela Yu",
       "price": 699,
       "discount": 10,
@@ -37,7 +37,7 @@
     },
     {
       "id": 5,
-      "title": "Complete JS course: Zero to Hero 2022",
+      "title": "Complete ReactJS course: Zero to Hero 2022",
       "author": "Jonas Schmedtmann",
       "price": 799,
       "discount": 20,
