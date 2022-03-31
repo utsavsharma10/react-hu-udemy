@@ -21,7 +21,7 @@ const Navbar = () => {
             sx={{ mr: 2 }}
           ></IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            HashedIn
+            <Button href="/courses"> HashedIn</Button>
           </Typography>
           <Button color="inherit" href="/courses">Courses</Button>
           <Button color="inherit" href="/wishlist">My WishList</Button>

@@ -22,9 +22,7 @@ function App() {
   };
   let bannerText  = "Discover Latest Courses on React" as const;
 
-  const handleClick = (item: itemProps) => {
-    // cart.push(item);
-
+  const handleClick = (item: itemProps) => {  
     if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
     console.log(cart);
