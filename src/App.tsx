@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CoursesList from "./components/CoursesList";
+import CoursesList from "./components/CourseListing";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -31,7 +31,7 @@ function App() {
   // useEffect(() => {
   //   console.log("item added in cart");
   // }, [cart]);
-
+// useEffect to set json data (no dependency[])
   return (
     <React.Fragment>
       <Navbar />
@@ -42,10 +42,10 @@ function App() {
           element={
             <>
               <Box sx={{mx: "8rem"}}><Banner bannerText={bannerText}/></Box>
-              
               <Box sx={{ mx: "8rem", display: "flex" }}>
                 <Box sx={{ width: "74%" }}>
-                  <CoursesList handleClick={handleClick} />
+                  <CoursesList />
+                  {/* <CoursesList handleClick={handleClick} /> */}
                 </Box>
                 <Box sx={{ width: "25%", marginLeft: "20px" }}>
                   <Cart cart={cart} setCart={setCart} sx={{ width: "40%" }} />
