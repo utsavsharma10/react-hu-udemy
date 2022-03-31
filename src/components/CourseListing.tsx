@@ -11,7 +11,7 @@ const CoursesList = () => {
 
     const fetchProducts = () => {
       dispatch(setProducts(data));
-      console.log("data ji:", data);
+      console.log("data:", data);
     };
     
     useEffect(() => {

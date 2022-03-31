@@ -8,7 +8,8 @@ import CardMedia from "@mui/material/CardMedia";
 import { flexbox } from "@mui/system";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import IconButton from '@mui/material/IconButton';
 
 const CourseCard = () => {
   const products = useSelector((state:any) => state.allProducts.products);
@@ -52,6 +53,15 @@ const CourseCard = () => {
         <Button size="small" sx={{fontSize: "10px"}} style={buttonStyle}>
           Add to Cart
         </Button>
+        {/* <Button
+            type="submit"
+            variant="outlined"
+            endIcon={<KeyboardArrowRightIcon />}
+          >
+          </Button> */}
+          <IconButton component={Link} to={`/courses/${id}`} >
+            <ChevronRightIcon fontSize="medium" />
+          </IconButton>
       </CardAction>
     </Card>
     );

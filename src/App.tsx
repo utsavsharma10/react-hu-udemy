@@ -7,6 +7,7 @@ import Profile from "./components/Profile";
 import Wishlist from "./components/Wishlist";
 import { Box } from "@mui/system";
 import Banner from "./components/Banner";
+import CourseDetails from "./components/CourseDetails";
 // import './App.css';
 
 function App() {
@@ -45,7 +46,6 @@ function App() {
               <Box sx={{ mx: "8rem", display: "flex" }}>
                 <Box sx={{ width: "74%" }}>
                   <CoursesList />
-                  {/* <CoursesList handleClick={handleClick} /> */}
                 </Box>
                 <Box sx={{ width: "25%", marginLeft: "20px" }}>
                   <Cart cart={cart} setCart={setCart} sx={{ width: "40%" }} />
@@ -53,6 +53,10 @@ function App() {
               </Box>
             </>
           }
+        />
+        <Route
+          path="/courses/:courseId"
+          element={<CourseDetails/>}
         />
         <Route
           path="/cart"
