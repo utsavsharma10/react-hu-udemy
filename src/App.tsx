@@ -1,38 +1,37 @@
+import { Box } from "@mui/system";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Dispatch } from "redux";
+import Banner from "./components/Banner";
+import Cart from "./components/Cart";
+import CourseDetails from "./components/CourseDetails";
 import CoursesList from "./components/CourseListing";
 import Navbar from "./components/Navbar";
-import Cart from "./components/Cart";
-import { Routes, Route, Navigate } from "react-router-dom";
 import Profile from "./components/Profile";
 import Wishlist from "./components/Wishlist";
-import { Box } from "@mui/system";
-import Banner from "./components/Banner";
-import CourseDetails from "./components/CourseDetails";
+import { addToCart } from "./redux/actions/cartActions";
+import { Cart as CartType, CartData } from "./redux/constants/action-types";
+
 // import './App.css';
 
 function App() {
-  const [cart, setCart] = useState([] as any);
-  type itemProps = {
-    id: number;
-    title: string;
-    author: string;
-    price: number;
-    discount: number;
-    tag1: string;
-    tag2: string;
-  };
-  let bannerText  = "Discover Latest Courses on React" as const;
+  const [cart, setCart] = useState<CartType[]>([]);
+  let bannerText = "Discover Latest Courses on React" as const;
 
-  const handleClick = (item: itemProps) => {  
+  const dispatch: Dispatch<any> = useDispatch();
+  const handleClick = (item: CartType) => {
     if (cart.indexOf(item) !== -1) return;
-    setCart([...cart, item]);
-    console.log(cart);
+    let cartItem = [...cart, item];
+    setCart(cartItem);
+    let data: CartData = {
+      cartData: cartItem,
+    };
+    dispatch(addToCart(data));
   };
-
-  // useEffect(() => {
-  //   console.log("item added in cart");
-  // }, [cart]);
-// useEffect to set json data (no dependency[])
+  React.useEffect(() => {
+    setCart([]);
+  }, []);
   return (
     <React.Fragment>
       <Navbar />
@@ -42,7 +41,9 @@ function App() {
           path="/courses"
           element={
             <>
-              <Box sx={{mx: "8rem"}}><Banner bannerText={bannerText}/></Box>
+              <Box sx={{ mx: "8rem" }}>
+                <Banner bannerText={bannerText} />
+              </Box>
               <Box sx={{ mx: "8rem", display: "flex" }}>
                 <Box sx={{ width: "74%" }}>
                   <CoursesList />
@@ -54,10 +55,7 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/courses/:courseId"
-          element={<CourseDetails/>}
-        />
+        <Route path="/courses/:courseId" element={<CourseDetails />} />
         <Route
           path="/cart"
           element={<Cart cart={cart} setCart={setCart}></Cart>}

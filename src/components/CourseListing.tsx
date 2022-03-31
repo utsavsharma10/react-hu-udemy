@@ -1,8 +1,8 @@
-import CourseCard from "./CourseComponent";
-import data from "../courseData.json";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import  {setProducts} from "../redux/actions/productActions"
+import data from "../courseData.json";
+import { setProducts } from "../redux/actions/productActions";
+import CourseCard from "./CourseComponent";
 
 const CoursesList = () => {
 
@@ -17,8 +17,6 @@ const CoursesList = () => {
     useEffect(() => {
       fetchProducts();
     }, []);
-    console.log("data from json ji", products)
-    console.log("Products :", products);
     return (
       <section>
         <CourseCard />

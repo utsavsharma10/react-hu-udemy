@@ -1,18 +1,12 @@
 //@ts-ignore
-import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import {
-  Button,
-  FormControlLabel,
-  RadioGroup,
-  FormControl,
-  FormLabel,
-  Checkbox,
-  FormGroup,
-} from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { Box } from "@mui/system";
+import {
+  Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, RadioGroup
+} from "@mui/material";
 import Radio from "@mui/material/Radio";
+import TextField from "@mui/material/TextField";
+import { Box } from "@mui/system";
+import React, { useState } from "react";
 
 const ProfileForm = () => {
   const [dname, setDname] = useState("");
@@ -46,19 +40,19 @@ const ProfileForm = () => {
     setAboutError(false);
     setRoleError(false);
 
-    if (dname == "") {
+    if (dname === "") {
       setDnameError(true);
     }
-    if (fname == "") {
+    if (fname === "") {
       setFnameError(true);
     }
-    if (about == "") {
+    if (about === "") {
       setAboutError(true);
     }
-    if (areaOfInterest.length == 0) {
+    if (areaOfInterest.length === 0) {
       setAreaOfInterestError(true);
     }
-    if (role == "") {
+    if (role === "") {
       setRoleError(true);
     }
     if (dname && fname && about && type && areaOfInterest) {
