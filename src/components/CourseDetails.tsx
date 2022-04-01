@@ -11,9 +11,6 @@ import Banner from "./Banner";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
-  // console.log(courseId);
-  // console.log(typeof(courseId));
-  // console.log(typeof(parseInt(courseId)));
 
   let bannerText = "Discover Latest Courses on React" as const;
 

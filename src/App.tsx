@@ -13,8 +13,6 @@ import Wishlist from "./components/Wishlist";
 import { addToCart } from "./redux/actions/cartActions";
 import { Cart as CartType, CartData } from "./redux/constants/action-types";
 
-// import './App.css';
-
 function App() {
   const [cart, setCart] = useState<CartType[]>([]);
   let bannerText = "Discover Latest Courses on React" as const;
