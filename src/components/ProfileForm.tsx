@@ -1,12 +1,18 @@
 //@ts-ignore
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import {
-  Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, RadioGroup
-} from "@mui/material";
-import Radio from "@mui/material/Radio";
-import TextField from "@mui/material/TextField";
-import { Box } from "@mui/system";
 import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import {
+  Button,
+  FormControlLabel,
+  RadioGroup,
+  FormControl,
+  FormLabel,
+  Checkbox,
+  FormGroup,
+} from "@mui/material";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Box } from "@mui/system";
+import Radio from "@mui/material/Radio";
 
 const ProfileForm = () => {
   const [dname, setDname] = useState("");
@@ -15,9 +21,6 @@ const ProfileForm = () => {
   const [about, setAbout] = useState("");
   const [type, setType] = useState("");
   const [role, setRole] = useState("");
-  const [expertise, setExpertise] = useState("");
-  const [experience, setExperience] = useState("");
-  
   const [dnameError, setDnameError] = useState(false);
   const [fnameError, setFnameError] = useState(false);
   const [aboutError, setAboutError] = useState(false);
@@ -43,31 +46,23 @@ const ProfileForm = () => {
     setAboutError(false);
     setRoleError(false);
 
-    if (dname === "") {
+    if (dname == "") {
       setDnameError(true);
     }
-    if (fname === "") {
+    if (fname == "") {
       setFnameError(true);
     }
-    if (about === "") {
+    if (about == "") {
       setAboutError(true);
     }
-    if (areaOfInterest.length === 0) {
+    if (areaOfInterest.length == 0) {
       setAreaOfInterestError(true);
     }
-    if (role === "") {
+    if (role == "") {
       setRoleError(true);
     }
     if (dname && fname && about && type && areaOfInterest) {
-      console.log("DisplayName:",dname);
-      console.log("First name:", fname);
-      console.log("Last name:", lname);
-      console.log("About:", about);
-      console.log("Type:", type);
-      console.log("Are of interest:", areaOfInterest)     
-      console.log("Role:", role); 
-      console.log("Experience:", experience);
-      console.log("Expertise:", expertise);
+      console.log(dname, fname, about, type);
     }
   };
 
@@ -217,7 +212,7 @@ const ProfileForm = () => {
           <Box>
             <FormControl>
               <FormLabel>How much of experience you have?</FormLabel>
-              <RadioGroup row onChange={(e) => setExperience(e.target.value)}>
+              <RadioGroup row onChange={(e) => setType(e.target.value)}>
                 <FormControlLabel
                   value="0-5"
                   control={<Radio />}
@@ -239,7 +234,7 @@ const ProfileForm = () => {
           <Box>
             <FormControl>
               <FormLabel>What is you expertise</FormLabel>
-              <RadioGroup row onChange={(e) => setExpertise(e.target.value)}>
+              <RadioGroup row onChange={(e) => setType(e.target.value)}>
                 <FormControlLabel
                   value="java"
                   control={<Radio />}

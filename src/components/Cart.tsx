@@ -4,8 +4,9 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
-import React, { Dispatch, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 import { addToCart } from "../redux/actions/cartActions";
 import { CartData } from "../redux/constants/action-types";
 
@@ -25,6 +26,7 @@ const Cart = ({ cart, setCart }: any) => {
   const handleRemove = (id: number) => {
     const arr = testCart.filter((item: any) => item.id !== id);
     setCart(arr);
+    console.log(arr);
     handlePrice();
     let cardData: CartData = {
       cartData: arr,
@@ -50,7 +52,7 @@ const Cart = ({ cart, setCart }: any) => {
         <Typography style={center}>YOUR CART DETAILS</Typography>
         <Divider />
 
-        {testCart?.map((item: any) => (
+        {testCart.map((item: any) => (
           <>
             <Box key={item.id} sx={{ my: "1.5rem" }}>
               <Box sx={{ display: "flex" }}>
@@ -68,14 +70,26 @@ const Cart = ({ cart, setCart }: any) => {
                 <Typography sx={{ fontSize: 14 }}>{item.title}</Typography>
               </Box>
               <Typography
-                sx={{ fontSize: 16, fontWeight: "bold", float: "right" }}
+                sx={{
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  float: "right",
+                }}
               >
                 Rs {item.price}/-
               </Typography>
               <Button
-                sx={{ width: "9rem", fontSize: "12px", color: "#FF6738" }}
-                onClick={() => handleRemove(item.id)}
-              >Remove</Button>
+                sx={{
+                  width: "9rem",
+                  fontSize: "12px",
+                  color: "#FF6738",
+                }}
+                onClick={() => {
+                  handleRemove(item.id);
+                }}
+              >
+                Remove
+              </Button>
             </Box>
             <Divider />
           </>
