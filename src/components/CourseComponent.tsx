@@ -10,7 +10,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const CourseCard = () => {
+const CourseComponent = ( {handleClick}:any) => {
   const products = useSelector((state:any) => state.allProducts.products);
     const center = {
     display: "flex",
@@ -49,7 +49,7 @@ const CourseCard = () => {
         <Typography display="inline" sx={{ fontSize: 18, width: "10%", fontWeight: 100, textDecoration: "line-through" }}>Rs{price}/-</Typography>
       </CardContent>
       <CardAction >
-        <Button size="small" sx={{fontSize: "10px"}} style={buttonStyle}>
+        <Button size="small" sx={{fontSize: "10px"}} style={buttonStyle} onClick={() => handleClick(product)}>
           Add to Cart
         </Button>
         {/* <Button
@@ -68,7 +68,7 @@ const CourseCard = () => {
   return <>{renderList}</>;
 };
 
-export default CourseCard;
+export default CourseComponent;
 
 
 

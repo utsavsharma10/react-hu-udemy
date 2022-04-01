@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import data from "../courseData.json";
 import { setProducts } from "../redux/actions/productActions";
-import CourseCard from "./CourseComponent";
+import CourseComponent from "./CourseComponent";
 
-const CoursesList = () => {
+const CoursesListing = ({handleClick}: any) => {
 
     const products = useSelector((state: any) => state.allProducts.products);
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const CoursesList = () => {
     }, []);
     return (
       <section>
-        <CourseCard />
+        <CourseComponent handleClick={handleClick}/>
       </section>
     );
   
@@ -33,7 +33,7 @@ const CoursesList = () => {
   // );
 };
 
-export default CoursesList;
+export default CoursesListing;
 
 
 /*

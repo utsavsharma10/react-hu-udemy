@@ -15,6 +15,9 @@ const ProfileForm = () => {
   const [about, setAbout] = useState("");
   const [type, setType] = useState("");
   const [role, setRole] = useState("");
+  const [expertise, setExpertise] = useState("");
+  const [experience, setExperience] = useState("");
+  
   const [dnameError, setDnameError] = useState(false);
   const [fnameError, setFnameError] = useState(false);
   const [aboutError, setAboutError] = useState(false);
@@ -56,7 +59,15 @@ const ProfileForm = () => {
       setRoleError(true);
     }
     if (dname && fname && about && type && areaOfInterest) {
-      console.log(dname, fname, about, type);
+      console.log("DisplayName:",dname);
+      console.log("First name:", fname);
+      console.log("Last name:", lname);
+      console.log("About:", about);
+      console.log("Type:", type);
+      console.log("Are of interest:", areaOfInterest)     
+      console.log("Role:", role); 
+      console.log("Experience:", experience);
+      console.log("Expertise:", expertise);
     }
   };
 
@@ -206,7 +217,7 @@ const ProfileForm = () => {
           <Box>
             <FormControl>
               <FormLabel>How much of experience you have?</FormLabel>
-              <RadioGroup row onChange={(e) => setType(e.target.value)}>
+              <RadioGroup row onChange={(e) => setExperience(e.target.value)}>
                 <FormControlLabel
                   value="0-5"
                   control={<Radio />}
@@ -228,7 +239,7 @@ const ProfileForm = () => {
           <Box>
             <FormControl>
               <FormLabel>What is you expertise</FormLabel>
-              <RadioGroup row onChange={(e) => setType(e.target.value)}>
+              <RadioGroup row onChange={(e) => setExpertise(e.target.value)}>
                 <FormControlLabel
                   value="java"
                   control={<Radio />}

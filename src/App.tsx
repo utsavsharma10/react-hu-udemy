@@ -6,7 +6,7 @@ import { Dispatch } from "redux";
 import Banner from "./components/Banner";
 import Cart from "./components/Cart";
 import CourseDetails from "./components/CourseDetails";
-import CoursesList from "./components/CourseListing";
+import CoursesListing from "./components/CourseListing";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Wishlist from "./components/Wishlist";
@@ -46,7 +46,7 @@ function App() {
               </Box>
               <Box sx={{ mx: "8rem", display: "flex" }}>
                 <Box sx={{ width: "74%" }}>
-                  <CoursesList />
+                  <CoursesListing handleClick={handleClick} />
                 </Box>
                 <Box sx={{ width: "25%", marginLeft: "20px" }}>
                   <Cart cart={cart} setCart={setCart} sx={{ width: "40%" }} />
