@@ -1,15 +1,14 @@
-import React from "react";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardAction from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import { flexbox } from "@mui/system";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
+import Typography from "@mui/material/Typography";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CourseCard = () => {
   const products = useSelector((state:any) => state.allProducts.products);
@@ -39,8 +38,8 @@ const CourseCard = () => {
           alt="course_img"
       />
       <CardContent sx={{flexBasis: "100%", display: "flex", alignItems: "center", padding: 0, paddingLeft:"0.5rem"}}>
-        <Typography display="inline" sx={{ fontSize: 14, fontWeight: "bold", width: "40%" }}>{title}
-          <p>
+        <Typography display="inline" sx={{ fontSize: 14, fontWeight: "bold", width: "40%"}}>{title}
+          <p style={{margin: 0}}>
           <Button size="small" href="#" style={buttonStyle} sx={{mr: "0.5rem"}}>{tag1}</Button>
           <Button size="small" href="#" style={buttonStyle}>{tag2}</Button>
           </p>
