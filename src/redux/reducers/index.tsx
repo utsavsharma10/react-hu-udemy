@@ -1,6 +1,6 @@
 import * as localforage from "localforage";
 import { combineReducers } from "redux";
-import { PersistConfig, persistReducer } from "redux-persist";
+import { PersistConfig } from "redux-persist";
 import { cartReducer } from "./cartReducers";
 import { productsReducer, selectedProductsReducer } from "./productsReducers";
 
@@ -14,7 +14,7 @@ const persistConfig: PersistConfig<any> = {
 const reducers = combineReducers({
   allProducts: productsReducer,
   product: selectedProductsReducer,
-  pStore: persistReducer(persistConfig, cartReducer)
+  cartData: cartReducer
 });
-
+	
 export default reducers;

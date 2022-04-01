@@ -42,7 +42,7 @@ const Cart = ({ cart, setCart }: any) => {
     handlePrice();
   });
 
-  const testCart = useSelector((state: CartData) => state.cartData);
+  const testCart = useSelector((state: any) => state.cartData.cartData);
 
   return (
     <Card style={cartBoxStyle}>

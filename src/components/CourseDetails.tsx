@@ -11,7 +11,10 @@ import Banner from "./Banner";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
-  const cId = Number(courseId);
+  // console.log(courseId);
+  // console.log(typeof(courseId));
+  // console.log(typeof(parseInt(courseId)));
+
   let bannerText = "Discover Latest Courses on React" as const;
 
   let product = useSelector((state: any) => state.product);
@@ -19,13 +22,13 @@ const CourseDetails = () => {
 
   const dispatch = useDispatch();
   const fetchProductDetail = (cId: number) => {
-    const response = data.find((item) => item.id === 2); // Golmal
+    const response = data.find((item) => item.id === cId);
     console.log("response:", response);
     dispatch(selectedProduct(response));
   };
 
   useEffect(() => {
-    if (courseId && courseId !== "") fetchProductDetail(Number("courseId"));
+    if (courseId && courseId !== "") fetchProductDetail(parseInt(courseId));
   }, [courseId]);
 
   return (
