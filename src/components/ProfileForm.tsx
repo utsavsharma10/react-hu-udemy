@@ -5,6 +5,7 @@ import {
 } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 
@@ -17,13 +18,17 @@ const ProfileForm = () => {
   const [role, setRole] = useState("");
   const [expertise, setExpertise] = useState("");
   const [experience, setExperience] = useState("");
+  const [areaOfInterest, setAreaOfInterest] = useState<string[]>([]);
   
   const [dnameError, setDnameError] = useState(false);
   const [fnameError, setFnameError] = useState(false);
   const [aboutError, setAboutError] = useState(false);
   const [roleError, setRoleError] = useState(false);
+  const [typeError, setTypeError] = useState(false);
+  const [expertiseError, setExpertiseError] = useState(false);
+  const [experienceError, setExperienceError] = useState(false);
   const [areaOfInterestError, setAreaOfInterestError] = useState(false);
-  const [areaOfInterest, setAreaOfInterest] = useState<string[]>([]);
+
 
   const handleAoiChange = (e: any) => {
     const index = areaOfInterest.indexOf(e.target.value);
@@ -54,6 +59,15 @@ const ProfileForm = () => {
     }
     if (areaOfInterest.length === 0) {
       setAreaOfInterestError(true);
+    }
+    if (type === "") {
+      setTypeError(true);
+    }
+    if (experience === "") {
+      setExperienceError(true);
+    }
+    if (expertise === "") {
+      setExpertiseError(true);
     }
     if (role === "") {
       setRoleError(true);
@@ -193,6 +207,7 @@ const ProfileForm = () => {
                 labelPlacement="end"
               />
             </FormGroup>
+            <Typography sx={{color: "red"}}>{areaOfInterestError ? "Select at least one": ""}</Typography>
           </FormControl>
         </Box>
 
@@ -211,6 +226,7 @@ const ProfileForm = () => {
                 label="Professional"
               />
             </RadioGroup>
+            <Typography sx={{color: "red"}}>{typeError ? "Select your professional status" : ""}</Typography>
           </FormControl>
         </Box>
         <Box sx={{ border: "1px solid #E0E0E0", padding: "0.5rem" }}>
@@ -234,6 +250,7 @@ const ProfileForm = () => {
                   label="10 & above"
                 />
               </RadioGroup>
+            <Typography sx={{color: "red"}}>{experienceError ? "Select your experience" : ""}</Typography>
             </FormControl>
           </Box>
           <Box>
@@ -256,6 +273,7 @@ const ProfileForm = () => {
                   label="Backend"
                 />
               </RadioGroup>
+            <Typography sx={{color: "red"}}>{expertiseError ? "Select your expertise" : ""}</Typography>
             </FormControl>
           </Box>
 

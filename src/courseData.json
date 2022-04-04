@@ -3,8 +3,8 @@
       "id": 1,
       "title": "Responsive Design Course XYZ How to design responsive templates",
       "author": "Joseph marie",
-      "price": 563,
-      "discount": 5,
+      "price": 200,
+      "discount": 10,
       "tag1": "React",
       "tag2": "React"
     },
@@ -13,7 +13,7 @@
       "title": "Learn React By Building Whatsapp Clone",
       "author": "Fiakyo Adpejeu",
       "price": 456,
-      "discount": 10,
+      "discount": 0,
       "tag1": "React",
       "tag2": "ReactJS"
     },
